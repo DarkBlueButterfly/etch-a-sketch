@@ -8,3 +8,9 @@ for(i = 0; i < 16; i++) {
         container.appendChild(grid);
     }
 }
+
+// const grid = document.querySelectorAll(".grid");
+container.addEventListener("mouseover", (e) => {
+    // grid.style.backgroundColor = "red";
+    e.target.style.backgroundColor = "red";
+});
