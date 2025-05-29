@@ -9,8 +9,19 @@ for(i = 0; i < 16; i++) {
     }
 }
 
-// const grid = document.querySelectorAll(".grid");
 container.addEventListener("mouseover", (e) => {
-    // grid.style.backgroundColor = "red";
     e.target.style.backgroundColor = "red";
 });
+
+const btn = document.querySelector("#btn");
+btn.addEventListener("click", gridSize);
+
+function gridSize() {
+    let input = prompt("How large do you want your new grid? (1 - 100)");
+    input = Number(input);
+    // console.log(typeof input);
+    while (input > 100 || input <= 0) {
+        input = Number(prompt("Please choose between 1 and 100"));
+    }
+}
+// gridSize() //check
