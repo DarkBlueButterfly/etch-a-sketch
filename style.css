@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
+body {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
 #container {
     display: flex;
     /* background-color: lightpink; */
@@ -24,4 +30,5 @@
     width: 100px;
     height: 20px;
     border-radius: 20px;
+    margin: 50px;
 }

@@ -1,7 +1,7 @@
 // console.log("hello world");
 const container = document.querySelector("#container");
 
-const canvasSize = 960;
+const canvasSize = 700;
 container.style.width = `${canvasSize}px`;
 container.style.height = `${canvasSize}px`;
 
@@ -21,8 +21,13 @@ function setUp(initialSize) {
     }
 }
 
+const randomHexColor = () => {
+    let n = (Math.random() * 0xfffff * 1000000).toString(16);
+    return '#' + n.slice(0,6);
+};
+
 container.addEventListener("mouseover", (e) => {
-    e.target.style.backgroundColor = "black";
+    e.target.style.backgroundColor = randomHexColor();
 });
 
 const btn = document.querySelector("#btn");
