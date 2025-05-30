@@ -1,7 +1,12 @@
 // console.log("hello world");
 const container = document.querySelector("#container");
 
-function setUp(initialSize) {
+const canvasSize = 960
+container.style.width = `${canvasSize}px`;
+container.style.height = `${canvasSize}px`;
+
+function setUp(initialSize) {  
+    //remove previous grid:
     const square = document.querySelectorAll(".grid");
     square.forEach((div) => div.remove());
 
@@ -9,14 +14,17 @@ function setUp(initialSize) {
         for (let j = 0; j < initialSize; j++) {
             const grid = document.createElement("div");
             grid.classList.add("grid");
+            grid.style.width = `${canvasSize/initialSize}px`;
+            grid.style.height = `${canvasSize/initialSize}px`;
             container.appendChild(grid);
         }
     }
 }
-setUp(16); // 16x16 grid
+
+setUp(16); // Start wit 16x16 grid
 
 container.addEventListener("mouseover", (e) => {
-    e.target.style.backgroundColor = "red";
+    e.target.style.backgroundColor = "black";
 });
 
 const btn = document.querySelector("#btn");
@@ -35,47 +43,3 @@ function gridSize() {
     // return input;
     setUp(input);
 }
-
-// console.log(gridSize());
-
-// function gridSize() {
-//     let input = prompt("How large do you want your new grid? (1 - 100)");
-//     input = Number(input);
-//     while (true) {
-//     if (input > 100 || input <= 0) {
-//         input = Number(prompt("Please choose between 1 and 100"));
-//     } 
-//     }
-    // const grid = document.querySelectorAll("grid");
-    // grid.container.removeChild();
-    // return input;
-    // for(i = 0; i < input; i++) {
-    //     for(j = 0; j < input; j++) {
-    //         const grid = document.createAttribute("div");
-    //         grid.classList.add("grid");
-    //         container.appendChild(grid);
-    //     }
-    // }
-
-//}
-// gridSize() //check
-
-//clear all previous divs
-// function clearDiv() {
-//     grid.remove();
-// }
-
-// const grid = document.querySelectorAll("div");
-//     grid.parentNode.removeChild();
-
-//new grid
-// function newGrid() {
-//     // input = gridSize();
-//     for(i = 0; i < input; i++) {
-//         for(j = 0; j < input; j++) {
-//             const grid = document.createAttribute("div");
-//             grid.classList.add("grid");
-//             container.appendChild(grid);
-//         }
-//     }
-// }
