@@ -1,7 +1,7 @@
 // console.log("hello world");
 const container = document.querySelector("#container");
 
-const canvasSize = 960
+const canvasSize = 960;
 container.style.width = `${canvasSize}px`;
 container.style.height = `${canvasSize}px`;
 
@@ -20,8 +20,6 @@ function setUp(initialSize) {
         }
     }
 }
-
-setUp(16); // Start wit 16x16 grid
 
 container.addEventListener("mouseover", (e) => {
     e.target.style.backgroundColor = "black";
@@ -43,3 +41,6 @@ function gridSize() {
     // return input;
     setUp(input);
 }
+
+//initiate code:
+setUp(16); // Start with 16x16 grid
