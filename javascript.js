@@ -47,5 +47,15 @@ function gridSize() {
     setUp(input);
 }
 
+//clear button:
+const clearBtn = document.querySelector("#clear");
+clearBtn.addEventListener("click", clearGrid);
+
+//clearing the grid:
+function clearGrid() {
+    const grid = document.querySelectorAll(".grid");
+    grid.forEach((div) => div.style.backgroundColor = "aqua");
+}
+
 //initiate code:
 setUp(16); // Start with 16x16 grid
